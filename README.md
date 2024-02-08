@@ -1,2 +1,24 @@
-# stuff-n-stuff
-Stuff 'n Stuff: Your go-to for everything quirky and essential. Inspired by Parks and Recreation's Food 'n Stuff, we offer groceries to oddities in one spot.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
