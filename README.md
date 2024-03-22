@@ -69,7 +69,7 @@ Welcome to Stuff'n Stuff, a comprehensive ecommerce platform built with Ruby on 
 1. **Start the Rails Server**
 
    ```bash
-   bin/rails server
+   bin/dev
    ```
 
 2. Access the application at `http://localhost:3000`.
@@ -86,16 +86,8 @@ To access the admin interface, navigate to `http://localhost:3000/admin`. You'll
 
 ## Contributing
 
-We welcome contributions to Stuff'n Stuff! Please read our contributing guidelines before submitting pull requests or suggesting enhancements.
+I welcome contributions to Stuff'n Stuff! Please read our contributing guidelines before submitting pull requests or suggesting enhancements.
 
 ## Support
 
 For support, please open an issue in the project repository or contact the project maintainers directly.
-
-## License
-
-Specify the license under which this project is available. (e.g., MIT, GPL, etc.)
-
----
-
-This README provides a comprehensive guide to get started with the Stuff'n Stuff project. Feel free to customize it further to suit the specifics of your project and team's workflow.
