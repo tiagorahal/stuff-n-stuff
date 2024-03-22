@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_22_043058) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_14_152733) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -58,11 +58,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_043058) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_products", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "order_id", null: false
+    t.string "size"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_products_on_order_id"
+    t.index ["product_id"], name: "index_order_products_on_product_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "customer_email"
     t.boolean "fulfilled"
     t.integer "total"
-    t.string "adress"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,7 +81,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_043058) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.float "price"
+    t.integer "price"
     t.integer "category_id", null: false
     t.boolean "active"
     t.datetime "created_at", null: false
@@ -79,9 +90,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_043058) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "amount"
     t.string "size"
+    t.integer "amount"
+    t.integer "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_stocks_on_product_id"
@@ -89,6 +100,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_043058) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "stocks", "products"
 end

@@ -3,13 +3,13 @@
 one:
   name: MyString
   description: MyText
-  price: 1.5
+  price: 1
   category: one
   active: false
 
 two:
   name: MyString
   description: MyText
-  price: 1.5
+  price: 1
   category: two
   active: false
